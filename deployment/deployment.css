@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 /* ====== Orígenes de la IA - Estilos ====== */
 
+=======
+>>>>>>> 3f6a66ef53f7c4386d9b3b33f176c8d7e14ff025
 body {
   font-family: 'Inter', sans-serif;
   background-color: #f8fafc;
@@ -36,7 +39,11 @@ h2 {
   gap: 1.5rem;
 }
 
+<<<<<<< HEAD
 .origin-card {
+=======
+.tiempo_real-card {
+>>>>>>> 3f6a66ef53f7c4386d9b3b33f176c8d7e14ff025
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -44,12 +51,20 @@ h2 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+<<<<<<< HEAD
 .origin-card:hover {
+=======
+.tiempo_real-card:hover {
+>>>>>>> 3f6a66ef53f7c4386d9b3b33f176c8d7e14ff025
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 
+<<<<<<< HEAD
 .origin-card img {
+=======
+.tiempo_real-card img {
+>>>>>>> 3f6a66ef53f7c4386d9b3b33f176c8d7e14ff025
   width: 100%;
   height: 180px;
   object-fit: cover;
@@ -59,7 +74,11 @@ h2 {
   padding: 1rem 1.2rem;
 }
 
+<<<<<<< HEAD
 .card-content .year {
+=======
+.card-content .tema {
+>>>>>>> 3f6a66ef53f7c4386d9b3b33f176c8d7e14ff025
   display: inline-block;
   background-color: #5bc0be;
   color: #fff;
@@ -91,4 +110,8 @@ h2 {
   border-left: 4px solid #5bc0be;
   padding: 1rem;
   border-radius: 8px;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 3f6a66ef53f7c4386d9b3b33f176c8d7e14ff025
