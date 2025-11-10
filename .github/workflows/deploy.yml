@@ -1,0 +1,45 @@
+# Nombre del workflow que se muestra en GitHub.
+name: Deploy to GitHub Pages
+
+# Define cuándo se ejecuta el workflow.
+on:
+  # Se activa con cada push a la rama 'main'.
+  push:
+    branches:
+      - main
+  # Permite la ejecución manual desde la pestaña "Actions".
+  workflow_dispatch:
+
+# Permisos mínimos y seguros para el token del workflow.
+permissions:
+  contents: read      # Necesario para leer el código (checkout).
+  pages: write       # Necesario para escribir en GitHub Pages.
+  id-token: write    # Necesario para autenticación segura OpenID Connect (OIDC).
+
+# Lista de trabajos a ejecutar.
+jobs:
+  # Nombre del único trabajo: 'deploy'.
+  deploy:
+    # Configura el entorno de despliegue para GitHub Pages.
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    # Máquina virtual donde se ejecutará el trabajo.
+    runs-on: ubuntu-latest
+    # Secuencia de pasos a ejecutar en el trabajo.
+    steps:
+      # 1. Descarga el código del repositorio.
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      # 2. Configura el entorno para GitHub Pages.
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      # 3. Empaqueta los archivos del sitio en un artefacto.
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.' # Empaqueta todo el directorio actual.
+      # 4. Despliega el artefacto en GitHub Pages.
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
